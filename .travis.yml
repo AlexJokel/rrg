@@ -17,6 +17,7 @@ before_install:
   - if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo apt-get install libfuse-dev; fi
   - |
     if [ "$TRAVIS_OS_NAME" = "windows" ]; then
+      rustup default "${TRAVIS_RUST_VERSION}-msvc"
       choco install winpcap
       wget https://www.winpcap.org/install/bin/WpdPack_4_1_2.zip
       unzip WpdPack_4_1_2.zip

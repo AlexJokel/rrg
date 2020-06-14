@@ -18,9 +18,7 @@
 #[cfg(target_os = "linux")]
 pub mod filesystems;
 
-#[cfg(target_family = "unix")]
 pub mod interfaces;
-
 pub mod metadata;
 pub mod startup;
 pub mod network;
@@ -102,8 +100,6 @@ where
         "SendStartupInfo" => task.execute(self::startup::handle),
         "GetClientInfo" => task.execute(self::metadata::handle),
         "ListNetworkConnections" => task.execute(self::network::handle),
-
-        #[cfg(target_family = "unix")]
         "EnumerateInterfaces" => task.execute(self::interfaces::handle),
 
         #[cfg(target_os = "linux")]

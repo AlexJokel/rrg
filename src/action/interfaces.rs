@@ -102,6 +102,7 @@ impl super::Response for Response {
     }
 }
 
+#[cfg(target_family = "unix")]
 #[cfg(test)]
 mod tests {
 

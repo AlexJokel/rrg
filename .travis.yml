@@ -22,6 +22,7 @@ before_install:
       wget https://www.winpcap.org/install/bin/WpdPack_4_1_2.zip
       unzip WpdPack_4_1_2.zip
       cp WpdPack/Lib/x64/* "$TRAVIS_BUILD_DIR"
+      ls C:/Windows/System32 | grep packet.dll
     fi
 
 script:

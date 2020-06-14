@@ -15,7 +15,7 @@ rust:
 before_install:
   - if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo apt-get update; fi
   - if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo apt-get install libfuse-dev; fi
-  - if [ "$TRAVIS_OS_NAME" = "windows" ]; then rustup default "${TRAVIS_RUST_VERSION}-msvc"
+  - if [ "$TRAVIS_OS_NAME" = "windows" ]; then rustup default "${TRAVIS_RUST_VERSION}-msvc"; fi
   - if [ "$TRAVIS_OS_NAME" = "windows" ]; then choco install winpcap -y; fi
   - if [ "$TRAVIS_OS_NAME" = "windows" ]; then wget https://www.winpcap.org/install/bin/WpdPack_4_1_2.zip; fi
   - if [ "$TRAVIS_OS_NAME" = "windows" ]; then unzip WpdPack_4_1_2.zip; fi

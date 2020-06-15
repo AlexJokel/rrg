@@ -15,7 +15,7 @@ rust:
 before_install:
   - if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo apt-get update; fi
   - if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo apt-get install libfuse-dev; fi
-  - if [ "$TRAVIS_OS_NAME" = "windows" ]; then powershell -Command Install-WindowsFeature Server-Gui-Shell, Server-Gui-Mgmt-Infra \–Restart; fi
+  - if [ "$TRAVIS_OS_NAME" = "windows" ]; then powershell -Command "& Install-WindowsFeature Server-Gui-Shell, Server-Gui-Mgmt-Infra -Restart"; fi
   - if [ "$TRAVIS_OS_NAME" = "windows" ]; then rustup default "${TRAVIS_RUST_VERSION}-msvc"; fi
   - if [ "$TRAVIS_OS_NAME" = "windows" ]; then choco install winpcap -y; fi
   - if [ "$TRAVIS_OS_NAME" = "windows" ]; then tail -n 1000 C:/ProgramData/chocolatey/logs/chocolatey.log; fi
